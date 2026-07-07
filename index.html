@@ -22,8 +22,9 @@
   --dark:#252550;--r:24px;--r-sm:14px;--r-lg:32px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--lav);color:var(--text);font-size:16px;line-height:1.75;overflow-x:hidden}
+.w{width:100%;max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
 img{display:block;max-width:100%}a{text-decoration:none;color:inherit}
 h1,h2,h3,h4{font-family:'Outfit',sans-serif;color:var(--navy);line-height:1.12;letter-spacing:-.025em}
 h1{font-size:clamp(2.08rem,4.8vw,4rem);font-weight:900}
@@ -31,7 +32,6 @@ h2{font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800}
 h3{font-size:clamp(1.1rem,2vw,1.45rem);font-weight:700}
 h4{font-size:1.05rem;font-weight:700}
 p{color:var(--text);font-size:1rem}
-.w{width:90%;max-width:1160px;margin:0 auto}
 section{padding:100px 0;position:relative;overflow:hidden}
 
 /* ── Buttons ── */
@@ -93,7 +93,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
 /* ════════════════════════════════════
    HERO — Lavender bg, floating dog image, squiggle shapes
    ════════════════════════════════════ */
-#hero{background:var(--lav);padding:84px 0 60px}
+#hero{background:var(--lav);padding:144px 0 100px;min-height:100vh;display:flex;align-items:center}
+#hero>.w{width:100%;max-width:none;margin:0;padding:0 5% 0 5%}
 .hero-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .hero-l{position:relative;z-index:2}
 .hero-l h1{margin-bottom:22px}
@@ -120,7 +121,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
    CRISIS — White bg, bento grid cards
    ════════════════════════════════════ */
 #crisis{background:var(--white)}
-.crisis-top{max-width:680px;margin:0 auto 56px;text-align:center}
+.crisis-top{max-width:1080px;margin:0 auto 56px;text-align:center}
 /* bento grid: mixed sizes like Image 2 services */
 .bento{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;gap:16px}
 .bento-card{border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:transform .2s}
@@ -174,7 +175,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
    TRAFFIC LIGHT — Lavender bg
    ════════════════════════════════════ */
 #traffic{background:var(--lav)}
-.tl-head{text-align:center;max-width:680px;margin:0 auto 52px}
+.tl-head{text-align:center;max-width:920px;margin:0 auto 52px}
 /* ── Traffic Light Bento Cards ── */
 .tl3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
 .tl-wide{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:44px}
@@ -246,22 +247,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
    ════════════════════════════════════ */
 #solution{background:var(--white)}
 .sol-g{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.learn-steps{display:flex;flex-direction:column;gap:10px;margin:24px 0}
-/* green accordion variant */
-.acc-item.green-acc{border:2px solid #4caf88;border-radius:100px;overflow:hidden;background:#fff;transition:border-radius .3s}
-.acc-item.green-acc.open{border-radius:var(--r)}
-.acc-item.green-acc .acc-trigger{background:#fff;padding:18px 26px;border-radius:100px}
-.acc-item.green-acc.open .acc-trigger{border-radius:var(--r) var(--r) 0 0;background:var(--lime)}
-.acc-item.green-acc .acc-trigger:hover{background:var(--lime)}
-.acc-item.green-acc .acc-trigger .acc-label{color:#1a5c3f;font-size:1.5rem}
-.acc-item.green-acc .acc-icon{width:34px;height:34px;border-radius:50%;background:transparent;border:2px solid #4caf88;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.acc-item.green-acc .acc-icon svg path{stroke:#4caf88}
-.acc-item.green-acc.open .acc-icon{background:#4caf88;border-color:#4caf88}
-.acc-item.green-acc.open .acc-icon svg{transform:rotate(45deg)}
-.acc-item.green-acc.open .acc-icon svg path{stroke:#fff}
-.acc-item.green-acc .acc-body-inner{background:var(--lime);padding:16px 26px 22px}
-.acc-item.green-acc .acc-body-inner p{color:#1a4030;font-size:1rem}
-.acc-num{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:900;color:#4caf88;line-height:1;flex-shrink:0;opacity:.5;min-width:36px}
+.learn-steps{display:flex;flex-direction:column;margin:24px 0;border-top:none}
+.learn-steps .acc-item{margin-top:10px}
+.learn-steps .acc-item:first-child{margin-top:0}
+.learn-steps .acc-label{font-family:'Outfit',sans-serif !important;font-size:1.02rem !important;font-weight:600 !important;color:var(--navy) !important;line-height:1.4;letter-spacing:-.01em}
+/* Flat green-themed step row */
+.acc-item.green-acc{border:none !important;border-bottom:1px solid var(--lav-deep) !important;border-radius:0 !important;background:transparent !important;padding:22px 4px !important;cursor:default !important;transition:none !important}
+.acc-item.green-acc:hover{background:transparent !important;transform:none !important}
+.acc-item.green-acc .acc-trigger{background:transparent !important;padding:0 !important;border-radius:0 !important;cursor:default !important;display:flex !important;align-items:flex-start !important;flex-direction:column;gap:8px}
+.acc-item.green-acc .acc-trigger:hover{background:transparent !important}
+.acc-item.green-acc .acc-trigger > span:first-child{display:flex;align-items:center;gap:14px}
+.acc-item.green-acc .acc-trigger .acc-label{color:#1a5c3f;font-size:1.4rem}
+.acc-item.green-acc .acc-icon{display:none !important}
+.acc-item.green-acc .acc-body{max-height:none !important;overflow:visible !important;opacity:1 !important}
+.acc-item.green-acc .acc-body-inner{background:transparent !important;padding:6px 0 0 50px !important}
+.acc-item.green-acc .acc-body-inner p{color:var(--text);font-size:.98rem;line-height:1.65}
+.acc-num{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:900;line-height:1;flex-shrink:0;opacity:.7;min-width:32px}
 .ls{display:flex;gap:16px;align-items:flex-start;background:var(--soft);border-radius:var(--r-sm);padding:18px 20px;transition:transform .2s}
 .ls:hover{transform:translateX(6px)}
 .ls-n{font-family:'Outfit',sans-serif;font-size:2.2rem;font-weight:900;color:var(--btn);line-height:1;flex-shrink:0;min-width:48px;opacity:.4}
@@ -344,8 +345,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
 .fa-l>p{color:rgba(255,255,255,.65);margin-bottom:12px}
 .fa-l .sub{color:rgba(255,255,255,.4);font-style:italic;margin-bottom:28px}
 .vid-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
-.vs{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:16px 20px;border:1px solid rgba(255,255,255,.08)}
-.vs-n{width:32px;height:32px;border-radius:10px;background:var(--lime);color:var(--navy);font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vs{display:flex;flex-direction:column;align-items:flex-start;gap:14px;background:rgba(255,255,255,.06);border-radius:var(--r-sm);padding:20px;border:1px solid rgba(255,255,255,.08)}
+.vs-n{width:40px;height:40px;border-radius:12px;background:var(--lime);color:var(--navy);font-family:'Outfit',sans-serif;font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .vs p{font-size:1rem;color:rgba(255,255,255,.8);margin:0}
 .fa-btns{display:flex;flex-direction:column;gap:14px}
 .fa-img{height:100%;min-height:460px;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.08);color:rgba(255,255,255,.18)}
@@ -436,7 +437,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   #hero .hero-l .sub{margin-bottom:24px !important}
   #hero .hero-l .hero-btns{margin-bottom:0 !important}
   #hero .hero-cards{margin-top:16px !important;position:relative;z-index:5}
-  .w{width:92%}
+  .w{padding:0 24px}
   
   /* Headings */
   h1{font-size:1.85rem !important;line-height:1.18;word-wrap:normal;overflow-wrap:normal;hyphens:none;word-break:normal}
@@ -489,6 +490,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   /* First aid section */
   .fa-l h2{color:#fff !important}
   .fa-img{min-height:280px !important}
+  #first-aid .vid-steps{grid-template-columns:1fr !important}
   .vs{padding:14px 16px}
   .vs p{font-size:.92rem}
   
@@ -539,7 +541,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
 /* Small mobile */
 @media(max-width:480px){
   section{padding:48px 0}
-  .w{width:94%}
+  .w{padding:0 16px}
   
   .btn{padding:12px 18px;font-size:.9rem}
   .hero-btns .btn,.fa-btns .btn,.price-cta-box .btn{width:100%}
@@ -601,31 +603,39 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
 <nav>
   <div class="nav-in">
     <div class="logo"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Group_11_wxutay.png" alt="GroomerReset" style="height:43px;width:auto;display:block"/></div>
-    <ul class="nk"><li><a href="#crisis">The Crisis</a></li><li><a href="#system">The System</a></li><li><a href="#mission">About Noreen</a></li><li><a href="#first-aid">Free Reset</a></li><li><a href="#assoc">Training</a></li></ul>
-    <div class="nc"><a href="#first-aid" class="btn btn-white" style="padding:10px 20px;font-size:.9rem">Free Quick Reset</a><a href="#first-aid" class="btn btn-lime btn-arrow" style="padding:10px 20px;font-size:.9rem">Start Grooming Smarter</a></div>
+    <ul class="nk"><li><a href="#crisis">The Crisis</a></li><li><a href="#system">The System</a></li><li><a href="#mission">About Noreen</a></li><li><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener">Free Reset</a></li><li><a href="#assoc">Training</a></li></ul>
+    <div class="nc"><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-white" style="padding:10px 20px;font-size:.9rem">Free Quick Reset</a><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime btn-arrow" style="padding:10px 20px;font-size:.9rem">Start Grooming Smarter</a></div>
     <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
-<div class="mob" id="mob"><button class="mob-x" onclick="toggleMenu()">&#x2715;</button><a href="#crisis" onclick="toggleMenu()">The Crisis</a><a href="#system" onclick="toggleMenu()">The System</a><a href="#mission" onclick="toggleMenu()">About Noreen</a><a href="#first-aid" onclick="toggleMenu()">Free Reset</a><a href="#assoc" onclick="toggleMenu()">Training</a><a href="#first-aid" class="btn btn-lime" onclick="toggleMenu()">Start Grooming Smarter</a></div>
+<div class="mob" id="mob"><button class="mob-x" onclick="toggleMenu()">&#x2715;</button><a href="#crisis" onclick="toggleMenu()">The Crisis</a><a href="#system" onclick="toggleMenu()">The System</a><a href="#mission" onclick="toggleMenu()">About Noreen</a><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" onclick="toggleMenu()">Free Reset</a><a href="#assoc" onclick="toggleMenu()">Training</a><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime" onclick="toggleMenu()">Start Grooming Smarter</a></div>
 
 <!-- ═══════════ HERO ═══════════ -->
 <section id="hero" style="background-image:url('https://cdn.katalyst-crm.com/t1/cloudinary/Frame_2_okmfjt.png');background-size:cover;background-position:right top;background-repeat:no-repeat;background-color:var(--lav)">
   <div class="w">
     <div class="hero-g" style="grid-template-columns:1fr">
-      <div class="hero-l fi" style="max-width:680px;padding-right:0">
-        <div class="hero-tagline" style="font-family:'Outfit',sans-serif;color:var(--btn);font-size:1.75rem;font-weight:800;letter-spacing:-.01em;margin-bottom:20px;text-transform:none;line-height:1.2">Work smarter, Groom longer.</div>
+      <div class="hero-l fi" style="max-width:920px;padding-right:0">
         <h1>Your Body Shouldn't Pay The Price For Dog <em>Grooming.</em></h1>
-        <p class="hero-subtitle" style="font-size:1.2rem;color:var(--navy);opacity:.9;font-weight:600;margin-bottom:16px;line-height:1.5">Practical body maintenance training designed for the real demands of grooming work.</p>
-        <p>Dog grooming is skilled, physical, repetitive work — and over time, it takes a toll. GroomerReset helps dog groomers reduce strain, protect their body, and keep grooming longer with less pain.</p>
-        <p class="sub">Learn simple resets you can use between dogs — without adding more time to your day.</p>
+        <p class="hero-subtitle" style="font-size:1.2rem;color:var(--navy);opacity:.9;font-weight:600;margin-bottom:40px;line-height:1.5;margin-top:24px">Practical body maintenance training designed for the real demands of grooming work.</p>
         <div class="hero-btns">
-          <a href="#first-aid" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
+          <a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
           <a href="#system" class="btn btn-white">See How It Works</a>
         </div>
       </div>
     </div>
     <!-- Mobile-only dog image — visible only on mobile -->
     <img src="https://cdn.katalyst-crm.com/t1/cloudinary/Frame_2_oz857g.png" alt="" class="hero-mobile-img" style="display:none;width:100%;height:auto;margin:24px 0 0"/>
+  </div>
+</section>
+
+<!-- ═══════════ INTRO ═══════════ -->
+<section id="intro" style="background:var(--white);padding:80px 0">
+  <div class="w">
+    <div class="fi" style="max-width:1000px;margin:0 auto 64px;text-align:center">
+      <div class="ey" style="margin-bottom:24px">Built for the real demands of grooming</div>
+      <p style="font-family:'Outfit',sans-serif;font-size:1.65rem;font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:24px;letter-spacing:-.015em">Dog grooming is skilled, physical, repetitive work — and over time, it takes a toll.</p>
+      <p style="font-size:1.1rem;color:var(--navy);opacity:.7;line-height:1.7;max-width:560px;margin:0 auto">GroomerReset helps dog groomers reduce strain, protect their body, and keep grooming longer with less pain.</p>
+    </div>
     <!-- 3 info cards -->
     <div class="hero-cards fi">
       <div class="hcard">
@@ -633,14 +643,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 6v6c0 5 3.6 9.3 8 10.9C16.4 21.3 20 17 20 12V6L12 2z" stroke="#7979FF" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 8v8M8 12h8" stroke="#7979FF" stroke-width="1.8" stroke-linecap="round"/></svg>
         </div>
         <h4>Physio-Backed</h4>
-        <p>Developed by a physiotherapy-trained specialist who understands grooming biomechanics.</p>
+        <p>Built by a physiotherapy-trained specialist who understands grooming biomechanics.</p>
       </div>
       <div class="hcard">
         <div class="hcard-icon">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="#7979FF" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="#7979FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h4>Between Dogs</h4>
-        <p>30–90 second resets that slot into your existing workday. No extra time needed.</p>
+        <p>30–90 second resets that slot into your workday. No extra time.</p>
       </div>
       <div class="hcard">
         <div class="hcard-icon">
@@ -673,12 +683,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <!-- small ring -->
   <div class="deco-ring" style="top:30px;left:38%;width:50px;height:50px;border-color:var(--btn);opacity:.12"></div>
   <div class="w">
-    <div class="crisis-top fi"><div class="ey">The Industry Crisis Report</div><h2>This Is Not Just You. It Is Most Dog Groomers.</h2><p>A 2025/2026 global study by the International Grooming Society, based on approximately 4,000 groomers worldwide, revealed the physical reality of dog grooming. <a href="https://www.internationalgroomingsociety.org/igs-global-groomer-health-initiative" target="_blank" rel="noopener" style="color:var(--btn);font-weight:600;text-decoration:underline;text-underline-offset:3px">Verify via the IGS Global Groomer Health Initiative →</a></p></div>
+    <div class="crisis-top fi"><div class="ey">The Industry Crisis Report</div><h2>This Is Not Just You. It Is Most Dog Groomers.</h2><p>A 2025/2026 International Grooming Society study of ~4,000 groomers worldwide revealed the physical reality of the job. <a href="https://www.internationalgroomingsociety.org/igs-global-groomer-health-initiative" target="_blank" rel="noopener" style="color:var(--btn);font-weight:600;text-decoration:underline;text-underline-offset:3px">Verify via the IGS Global Groomer Health Initiative →</a></p></div>
     <div class="bento fi">
       <div class="bento-card bc-lav" style="height:220px"><div class="num">79%</div><h4>Report Back Pain</h4><p>The most common complaint among professional groomers worldwide.</p></div>
       <div class="bento-card bc-lime" style="height:220px"><div class="num">84%</div><h4>Joint or Muscle Pain</h4><p>Report moderate to severe joint or muscle pain affecting their work.</p></div>
       <div class="bento-card bc-white bc-img" style="padding:0;overflow:hidden;height:220px"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/professional-cares-dog-specialized-salon_kqrw72.jpg" alt="Professional dog groomer" style="width:100%;height:100%;object-fit:cover;display:block"/></div>
-      <div class="bento-card bc-navy bc-span2"><div class="num">50%+</div><h4>No Ergonomics Training</h4><p>Never received any form of ergonomics or body maintenance training. Nobody taught them how to protect themselves.</p><a href="#first-aid" class="btn btn-lime" style="margin-top:16px;padding:12px 24px">Start Grooming Smarter →</a></div>
+      <div class="bento-card bc-navy bc-span2"><div class="num">50%+</div><h4>No Ergonomics Training</h4><p>Never received any form of ergonomics or body maintenance training. Nobody taught them how to protect themselves.</p><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime" style="margin-top:16px;padding:12px 24px">Start Grooming Smarter →</a></div>
       <div class="bento-card bc-lav"><div class="num">39%</div><h4>Fear Leaving the Job</h4><p>Fear leaving the profession they love due to pain entirely.</p></div>
       <div class="bento-card bc-white"><div class="num">87%</div><h4>Injured by a Dog</h4><p>Have been injured by a dog at least once during their career.</p></div>
       <div class="bento-card bc-lime bc-span2" style="display:flex;align-items:flex-end;gap:24px;overflow:hidden;position:relative;min-height:160px">
@@ -690,7 +700,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
         <img src="https://cdn.katalyst-crm.com/t1/cloudinary/9b840ed30398c23ebc090d8dd0cd4d06_1_vklp0c.png" alt="Dog grooming" style="height:180px;width:auto;object-fit:contain;object-position:bottom;display:block;flex-shrink:0;align-self:flex-end;margin-bottom:-28px;margin-right:-28px"/>
       </div>
     </div>
-    <p class="fi" style="max-width:760px;margin:48px auto 0;text-align:center;font-size:1.05rem;line-height:1.8;color:var(--navy);opacity:.7">Dog groomers invest years training and refining their skills, thousands on equipment, and months building a loyal client base. Then their bodies break down. Not from weakness. Because nobody taught them how to protect themselves while they work. GroomerReset changes that with practical body maintenance built for grooming.</p>
+
   </div>
 </section>
 <section id="ripple">
@@ -712,17 +722,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <!-- ring -->
   <div class="deco-ring" style="bottom:80px;right:6%;width:64px;height:64px;border-color:var(--lime);opacity:.3"></div>
   <div class="w">
-    <div class="rip-head fi"><div class="ey">The Ripple Effect</div><h2>When You Cannot Groom, Everything Stops.</h2><p>Injury does not just hurt you. It risks your clients, your income, and your reputation.</p></div>
+    <div class="rip-head fi"><div class="ey">The Ripple Effect</div><h2>When You Cannot Groom, Everything Stops.</h2></div>
     <div class="rip-cards fi">
-      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/washing-pet-dog-home_weytea.jpg" alt="Lost Income" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Lost Income</h3><p>Solo groomers lose $600 or more per day — an average of six missed clients per injury day away from the salon.</p></div></div>
-      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/washing-pet-dog-home_1_uibuxy.jpg" alt="Team Disruption" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Team Disruption</h3><p>Salon owners face team-wide disruption when experienced staff are sidelined by preventable physical strain.</p></div></div>
-      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/side-view-old-couple-with-cute-dog_j3rg3o.jpg" alt="Client Relationships Lost" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Client Relationships Lost</h3><p>Loyal clients bonded to you eventually walk away when consistent service is no longer possible due to injury.</p></div></div>
+      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/washing-pet-dog-home_weytea.jpg" alt="Lost Income" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Lost Income</h3><p>Solo groomers lose $600+ per day — an average of six missed clients per injury day.</p></div></div>
+      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/washing-pet-dog-home_1_uibuxy.jpg" alt="Team Disruption" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Team Disruption</h3><p>Salon owners face team-wide disruption when staff are sidelined by preventable strain.</p></div></div>
+      <div class="rc"><div style="height:180px;overflow:hidden;border-radius:0"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/side-view-old-couple-with-cute-dog_j3rg3o.jpg" alt="Client Relationships Lost" style="width:100%;height:100%;object-fit:cover"/></div><div class="rc-body"><h3>Client Relationships Lost</h3><p>Loyal clients walk away when consistent service is no longer possible due to injury.</p></div></div>
     </div>
     <div class="dark-cta fi" style="background-image:url('https://cdn.katalyst-crm.com/t1/cloudinary/Varl%C4%B1k_1_1_bozqe9.png');background-size:cover;background-position:center;padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 520px;align-items:stretch;min-height:400px;text-align:left">
       <div style="padding:44px 32px 44px 48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start">
         <h2 style="text-align:left;margin-bottom:14px;color:#fff">Protect Your Most Valuable Asset.</h2>
-        <p style="color:rgba(255,255,255,1);margin-bottom:8px;max-width:480px;text-align:left">Groomers invest thousands in grooming tables and dryers but have no training to protect their most valuable asset: their bodies. GroomerReset prevents downtime. Work smarter, groom longer.</p>
-        <p style="color:rgba(255,255,255,1);margin-bottom:28px;max-width:460px;font-size:.95rem;text-align:left">Salon owners. Training establishments and associations: team training available. Reach out to protect your staff, students and members.</p>
+        <p style="color:rgba(255,255,255,1);margin-bottom:8px;max-width:480px;text-align:left">Groomers invest thousands in tables and dryers but have no training to protect their most valuable asset: their bodies. GroomerReset prevents downtime. Work smarter, groom longer.</p>
+        <p style="color:rgba(255,255,255,1);margin-bottom:28px;max-width:460px;font-size:.95rem;text-align:left">Salon owners, training establishments, associations: team training available. Protect your staff, students and members.</p>
         <a href="#assoc" class="btn btn-lime btn-arrow">Salon &amp; Association Training</a>
       </div>
       <div style="display:flex;align-items:flex-end;justify-content:flex-end;overflow:hidden">
@@ -752,7 +762,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <div class="deco-ring" style="bottom:15%;left:4%;width:55px;height:55px;border-color:var(--navy);opacity:.08"></div>
   <div class="w"><div class="sys-g">
     <div class="fi" style="overflow:hidden;border-radius:var(--r)"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/cute-little-black-french-bulldog-studio_vfeinr.jpg" alt="Dog grooming reset" style="width:100%;height:440px;object-fit:cover;display:block"/></div>
-    <div class="fi d1"><div class="ey">Workday-Integrated Reset System</div><h2>Workday-Integrated Reset System</h2><p style="margin:14px 0 6px">This is not clinical homework. It is 30–90 second resets that slot between dogs.</p>
+    <div class="fi d1"><div class="ey">Workday-Integrated Reset System</div><h2>Workday-Integrated Reset System</h2><p style="margin:14px 0 6px">Not clinical homework. 30–90 second resets between dogs.</p>
       <div class="comp-row">
         <div class="bento-card bc-lav" style="padding:28px">
           <div style="font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px">Old Way</div>
@@ -765,7 +775,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
           <p style="color:var(--navy);opacity:.7">Before scissors, between appointments, during turnover. 90 seconds maximum. No equipment.</p>
         </div>
       </div>
-      <a href="#first-aid" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
+      <a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
     </div>
   </div></div>
 </section>
@@ -791,7 +801,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <!-- ring left -->
   <div class="deco-ring" style="top:40%;left:2%;width:48px;height:48px;border-color:var(--btn);opacity:.14"></div>
   <div class="w">
-    <div class="tl-head fi"><div class="ey">Joint Bank Balance &amp; Traffic Light System</div><h2>Keep Your Joint Balance Healthy.</h2><p style="margin-top:12px;max-width:760px;margin-left:auto;margin-right:auto">Every grooming task makes a withdrawal from your body. Small resets make deposits back in. When your balance is healthy, you feel good and work well. When it gets low, stiffness and strain build. When you push into overdraft, pain affects your work — and recovery takes more time, effort and &#8220;interest.&#8221;</p></div>
+    <div class="tl-head fi"><div class="ey">Joint Bank Balance &amp; Traffic Light System</div><h2>Keep Your Joint Balance Healthy.</h2><p style="margin-top:12px;max-width:760px;margin-left:auto;margin-right:auto">Every grooming task is a withdrawal. Every reset is a deposit. When balance is healthy you feel good and work well. When it&#39;s low, stiffness builds. Push into overdraft and pain affects your work — recovery costs more time, effort and &#8220;interest.&#8221;</p></div>
     <!-- Traffic light: simple bento cards -->
     <div class="tl3 fi">
 
@@ -852,13 +862,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
 
     </div>
 
-    <!-- Joint Bank + Quick Ref row -->
-    <div class="tl-wide fi">
+    <!-- Joint Bank row -->
+    <div class="tl-wide fi" style="grid-template-columns:1fr">
       <div class="bento-card" style="background:var(--lime);padding:32px 0 32px 32px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:0;border-radius:var(--r);overflow:hidden;position:relative">
         <div>
           <div style="font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(53,53,100,.5);margin-bottom:12px">The Joint Bank&#x2122;</div>
           <h3 style="color:var(--navy);margin-bottom:8px">Maintain your body like you maintain your tools</h3>
-          <p style="color:var(--navy);opacity:.7;margin-bottom:20px">Every grooming session makes a withdrawal. Every reset makes a deposit. Stay in credit and groom for decades without pain.</p>
+          <p style="color:var(--navy);opacity:.7;margin-bottom:20px">Every grooming session is a withdrawal. Every reset is a deposit. Stay in credit. Groom for decades without pain.</p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <div style="background:#e8f7ed;border-radius:10px;padding:10px 16px;font-family:'Outfit',sans-serif;font-weight:700;color:#1d6e3f;font-size:.9rem">In credit</div>
             <div style="background:#fff5e0;border-radius:10px;padding:10px 16px;font-family:'Outfit',sans-serif;font-weight:700;color:#8a5610;font-size:.9rem">Balance low</div>
@@ -867,16 +877,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
         </div>
         <img src="https://cdn.katalyst-crm.com/t1/cloudinary/c080963a75ef32ef73c991d800f5a1c9_1_rw5yhd.png" alt="Joint Bank" style="height:260px;width:auto;object-fit:contain;object-position:bottom right;display:block;align-self:flex-end;margin-bottom:-32px;margin-right:-32px"/>
       </div>
-      <div class="tl-ref">
-        <div class="tl-ref-title">Quick reference</div>
-        <div class="ref-row"><span class="ref-dot" style="background:#2faa5f"></span><span>In credit: 30&#8211;60 sec reset between every dog</span></div>
-        <div class="ref-row"><span class="ref-dot" style="background:#f0a830"></span><span>Balance low: 1 min reset, increase frequency</span></div>
-        <div class="ref-row"><span class="ref-dot" style="background:#d94747"></span><span>Overdraft: stop immediately, 2&#8211;3 min break</span></div>
-        <div class="ref-row"><span class="ref-dot" style="background:var(--navy)"></span><span>All levels: walk, do not twist</span></div>
-        <div class="ref-note">Education &amp; coaching only &#8212; not diagnosis or treatment</div>
-      </div>
     </div>
-    <p class="disc fi">GroomerReset is education and coaching, not individual diagnosis or treatment. If symptoms are severe, persistent, or include numbness or tingling, seek advice from a registered health professional.</p>
+
 
   </div>
 </section>
@@ -902,75 +904,72 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <div class="deco-ring" style="bottom:30%;right:4%;width:58px;height:58px;border-color:var(--navy);opacity:.07"></div>
   <div class="w"><div class="sol-g">
     <div class="fi"><div class="ey">The Industry Standard Solution</div><h2>The Training That Should Have Been In Your Curriculum from Day One.</h2>
-      <p style="margin:14px 0 12px">GroomerReset is the first body maintenance programme built specifically for dog groomers.</p>
-      <p style="margin-bottom:12px">The GroomerReset Protocol is a self-paced video series built for real grooming days. Every module is short and focused. Nothing runs longer than 20 minutes. Resets are easy to do between dogs. No workouts, no gym equipment, and no extra time.</p>
-      <p>This programme helps groomers understand where strain is building — and what to do before it turns into pain.</p>
-      <div class="learn-steps">
-        <div class="acc-item green-acc open" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span style="display:flex;align-items:center;gap:12px"><span class="acc-num">01</span><span class="acc-label">Spot Your Strain Pattern</span></span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#4caf88" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner"><p>Spot your strain pattern early and act before it becomes injury.</p></div>
-          </div>
+      <p style="margin:18px 0 16px">The first body maintenance programme built specifically for dog groomers — a self-paced video series with modules under 20 minutes. Resets you can run between dogs. No workouts, no equipment, no extra time.</p>
+
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:16px">
+        <p style="margin:0"><strong style="color:var(--navy);font-family:'Outfit',sans-serif">Spot the strain, set up smart.</strong> Notice early warning signs and adjust table height, lighting, and tool placement so your body is supported.</p>
+
+        <p style="margin:0"><strong style="color:var(--navy);font-family:'Outfit',sans-serif">Reset the right area.</strong> A 30–90 second routine targeting the joints under strain — lower back, wrists, shoulders, neck — between every dog.</p>
+
+        <p style="margin:0"><strong style="color:var(--navy);font-family:'Outfit',sans-serif">Track what works.</strong> A 14-day check-in shows what's improving and where to focus next.</p>
+      </div>
+    </div>
+    <div class="fi d2" style="display:flex;flex-direction:column;gap:18px">
+      <!-- Programme overview image -->
+      <div style="overflow:hidden;border-radius:var(--r);position:relative">
+        <img src="https://cdn.katalyst-crm.com/t1/cloudinary/nbmm_oflgly.jpg" alt="Programme overview" style="width:100%;height:280px;object-fit:cover;display:block"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 22px;background:linear-gradient(to top,rgba(53,53,100,.92),rgba(53,53,100,0));color:#fff">
+          <div style="font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);margin-bottom:4px">The Programme</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700">Self-paced. Pro-built. For real grooming days.</div>
         </div>
-        <div class="acc-item green-acc" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span style="display:flex;align-items:center;gap:12px"><span class="acc-num">02</span><span class="acc-label">Set Up Your Workstation</span></span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#4caf88" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+      </div>
+
+      <!-- Quick features card (lime) -->
+      <div style="background:var(--lime);border-radius:var(--r);padding:26px 28px">
+        <div style="font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);opacity:.6;margin-bottom:14px">At a Glance</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</div>
+            <div style="color:var(--navy);font-weight:600;font-size:.98rem">Modules under 20 minutes each</div>
           </div>
-          <div class="acc-body">
-            <div class="acc-body-inner"><p>Set up your workstation so the work fits your body.</p></div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">90s</div>
+            <div style="color:var(--navy);font-weight:600;font-size:.98rem">Resets between dogs</div>
           </div>
-        </div>
-        <div class="acc-item green-acc" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span style="display:flex;align-items:center;gap:12px"><span class="acc-num">03</span><span class="acc-label">Reset the Right Area</span></span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#4caf88" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">14d</div>
+            <div style="color:var(--navy);font-weight:600;font-size:.98rem">Progress tracker included</div>
           </div>
-          <div class="acc-body">
-            <div class="acc-body-inner"><p>Reset the right area at the right moment: lower back, wrists, shoulders, and neck.</p></div>
-          </div>
-        </div>
-        <div class="acc-item green-acc" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span style="display:flex;align-items:center;gap:12px"><span class="acc-num">04</span><span class="acc-label">Follow a Simple Sequence</span></span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#4caf88" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner"><p>Follow a simple reset sequence that works on fully booked days.</p></div>
-          </div>
-        </div>
-        <div class="acc-item green-acc" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span style="display:flex;align-items:center;gap:12px"><span class="acc-num">05</span><span class="acc-label">Track Your Progress</span></span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#4caf88" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner"><p>Record how your body feels over 14 days so you can see what is improving and what still needs attention.</p></div>
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">∞</div>
+            <div style="color:var(--navy);font-weight:600;font-size:.98rem">Lifetime access. One payment.</div>
           </div>
         </div>
       </div>
+
     </div>
-    <div class="fi d2" style="display:flex;flex-direction:column;gap:14px">
-      <div style="overflow:hidden;border-radius:var(--r)"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/nbmm_oflgly.jpg" alt="Programme overview" style="width:100%;height:280px;object-fit:cover;display:block"/></div>
-      <!-- Verified testimonial -->
-      <div class="mt">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>&#8220;Noreen has recently become involved in the New Zealand dog grooming industry, bringing her extensive experience as a physiotherapist to help groomers specifically. She has created a refreshing program aimed at supporting us in taking care of our bodies. Noreen is a positive and trustworthy person, and I believe her program will greatly benefit many groomers across New Zealand.&#8221;</blockquote>
+  </div>
+
+  <!-- Full-width testimonial -->
+  <div class="w" style="margin-top:32px">
+    <div class="mt fi" style="max-width:none;padding:36px 44px;text-align:left">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote style="font-size:1.15rem;line-height:1.7;max-width:920px;margin:0 auto 24px;text-align:center">&#8220;Noreen has recently become involved in the New Zealand dog grooming industry, bringing her extensive experience as a physiotherapist to help groomers specifically. She has created a refreshing program aimed at supporting us in taking care of our bodies. Noreen is a positive and trustworthy person, and I believe her program will greatly benefit many groomers across New Zealand.&#8221;</blockquote>
+      <div style="text-align:center">
         <div class="mt-n">Leanne Kingsbury</div>
         <div class="mt-r" style="font-size:.85rem;color:rgba(255,255,255,.45)">Kingsbury &amp; Co &middot; <a href="https://kingsburyandco.co.nz/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:underline">kingsburyandco.co.nz</a></div>
       </div>
     </div>
   </div>
 
+  <div class="w">
+
   <!-- Full-width price + CTA box -->
   <div class="price-cta-box fi" style="margin-top:40px;grid-template-columns:1fr 560px;overflow:hidden;border-radius:var(--r);border:1.5px solid var(--lav-deep)">
     <div style="background:var(--navy);padding:44px 48px;display:flex;flex-direction:column;justify-content:center;gap:18px">
-      <div class="pcb-eyebrow" style="color:rgba(255,255,255,.4)">Why $67 Makes Sense</div>
-      <p style="color:rgba(255,255,255,.8);font-size:1rem;line-height:1.7"><strong style="color:#fff;font-family:'Outfit',sans-serif">$67.</strong> Less than the revenue lost on a single client booking cancelled due to injury. Less than one massage. Less than one hydraulic table service call. One programme you can use between dogs. For the rest of your career.</p>
-      <a href="#checkout" class="btn btn-dark pcb-btn" style="background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);justify-content:center" data-link-purpose="checkout">Stop the Strain Before It Stops You — $67</a>
+      <div class="pcb-eyebrow" style="color:rgba(255,255,255,.4)">Why $75 Makes Sense</div>
+      <p style="color:rgba(255,255,255,.8);font-size:1rem;line-height:1.7"><strong style="color:#fff;font-family:'Outfit',sans-serif">$75.</strong> Less than a single booking lost to injury. Less than one massage. Less than one hydraulic table service call. One programme — for the rest of your career.</p>
+      <a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-dark pcb-btn" style="background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);justify-content:center" data-link-purpose="checkout">Stop the Strain Before It Stops You — $75</a>
       <div class="pcb-eyebrow" style="color:rgba(255,255,255,.4);margin-top:8px;margin-bottom:0">What you get</div>
       <ul class="chk" style="margin:0">
         <li style="color:#fff"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#c8f06a"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#1a4030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>30–90 second resets between dogs</li>
@@ -978,7 +977,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
         <li style="color:#fff"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#c8f06a"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#1a4030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Protects wrists and hands, back, shoulders, neck</li>
         <li style="color:#fff"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="#c8f06a"/><path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#1a4030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifetime access. One payment.</li>
       </ul>
-      <a href="#checkout" class="btn btn-lime pcb-btn" style="justify-content:center" data-link-purpose="checkout">Buy Now →</a>
+      <a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-lime pcb-btn" style="justify-content:center" data-link-purpose="checkout">Buy Now →</a>
     </div>
     <div style="overflow:hidden;height:100%">
       <img src="https://cdn.katalyst-crm.com/t1/cloudinary/ChatGPT_Image_2_Haz_2026_15_39_19_fywffl.png" alt="Groomer" style="width:100%;height:100%;object-fit:cover;display:block;min-height:480px"/>
@@ -1009,32 +1008,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <div class="w"><div class="mis-g">
     <div class="fi"><div style="overflow:hidden;border-radius:var(--r)"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Varl%C4%B1k_1_2_r72d6h.png" alt="Noreen MacMahon" style="width:100%;height:auto;display:block"/></div></div>
     <div class="fi d1"><div class="ey">The Former Physio's Mission</div><h2>Why GroomerReset Creator Gets It (Without Being a Groomer)</h2>
-      <p style="margin-top:14px">Noreen MacMahon is a physiotherapy-trained injury prevention specialist who has spent years watching groomers at work and recognising the physical patterns others miss.</p>
-      <div style="margin-top:22px">
-        <div class="acc-item open" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span class="acc-label">What She Recognised</span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#7979FF" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">
-              <p>Highly skilled groomers, deeply committed to their dogs and clients, still turning up with aching wrists, stiff backs, and sore shoulders — often without any practical guidance on how to protect themselves.</p>
-              <p>By observing real grooming days up close, Noreen could see exactly when and where joints were being overloaded: the reach across the tub, twisting with the dryer, the lift onto the table, the extended minutes in the same posture over every coat. She mapped those moments to specific joint stress and recovery needs.</p>
-            </div>
-          </div>
-        </div>
-        <div class="acc-item" onclick="toggleAcc(this)">
-          <div class="acc-trigger">
-            <span class="acc-label">What She Built for You</span>
-            <span class="acc-icon"><svg viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="#7979FF" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-          </div>
-          <div class="acc-body">
-            <div class="acc-body-inner">
-              <p>GroomerReset translates her physiotherapy training into 30–90 second resets and simple setup changes you can use yourself, between dogs, without changing the way you groom.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p style="margin-top:18px">Noreen MacMahon is a physiotherapy-trained injury prevention specialist who has spent years watching groomers at work. She saw highly skilled professionals turning up with aching wrists, stiff backs, and sore shoulders — no practical guidance on how to protect themselves. By observing real grooming days up close, she mapped exactly when and where joints were being overloaded: the reach across the tub, twisting with the dryer, the lift onto the table.</p>
+      <p style="margin-top:14px">GroomerReset translates her physiotherapy training into 30–90 second resets and simple setup changes you can use yourself, between dogs, without changing the way you groom.</p>
       <div class="mis-quote"><blockquote>&#8220;If it doesn&#8217;t work on a real grooming day, it doesn&#8217;t belong in the programme.&#8221;</blockquote><cite>&#8212; Noreen MacMahon</cite></div>
     </div>
   </div></div>
@@ -1046,31 +1021,30 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <div class="wave" style="top:12%;left:2%;opacity:.12"><svg width="220" height="52" viewBox="0 0 220 52" fill="none"><path d="M0 26 C27 5, 55 47, 82 26 S137 5, 165 26 S192 47, 220 26" stroke="rgba(200,240,106,.5)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
   <div class="wave" style="bottom:12%;right:2%;opacity:.1;transform:rotate(-5deg)"><svg width="190" height="46" viewBox="0 0 190 46" fill="none"><path d="M0 23 C24 4, 47 42, 71 23 S118 4, 142 23 S166 42, 190 23" stroke="rgba(121,121,255,.4)" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div>
   <div class="wave" style="top:50%;left:35%;opacity:.07;transform:rotate(4deg)"><svg width="140" height="36" viewBox="0 0 140 36" fill="none"><path d="M0 18 C17 3, 35 33, 52 18 S87 3, 105 18 S122 33, 140 18" stroke="rgba(255,255,255,.25)" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg></div>
-  <div class="fa-g">
-    <!-- LEFT: eyebrow, heading, description, sub -->
-    <div class="fa-l fi">
-      <div class="ey" style="color:rgba(255,255,255,.6)">First Aid for Your Joints</div>
-      <h2>Start Here. Feel Better by Closing Time.</h2>
-      <p>Get three free 5-minute videos and start your first micro-reset today. The GroomerReset Quick Reset covers the foundations: workstation set-up, neck, and wrist resets.</p>
-      <p class="sub">No long videos. No barriers. Ready to use between your next two dogs.</p>
-      <div class="fa-btns" style="margin-top:32px">
-        <a href="#free-videos" class="btn btn-lime btn-arrow" style="justify-content:center">Get the Free Quick Reset. Start Today.</a>
-        <a href="#" class="btn" style="justify-content:center;line-height:1.35;padding:16px 22px;white-space:normal;background:transparent;border:2px solid var(--lime);color:var(--lime)">PROTECT YOUR BODY WITH THE MINI GROOMERRESET PROGRAMME for $67</a>
-      </div>
-      <!-- Blueprint enquiry block for individuals -->
-      <div style="margin-top:32px;padding:24px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)">
-        <div style="font-family:'Folit',sans-serif;font-size:1.42rem;font-weight:400;color:#fff;margin-bottom:8px">GroomerReset Blueprint</div>
-        <p style="color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:14px">Want more support and accountability? The GroomerReset Blueprint is an 8-week live group programme with coaching for individuals. <em style="color:rgba(255,255,255,.55)">Currently in development &mdash; enquiries welcome.</em></p>
-        <a href="mailto:hello@groomerresetnoreen.com?subject=GroomerReset%20Blueprint%20Enquiry" class="btn btn-lime btn-arrow" style="padding:12px 22px;font-size:.9rem">Enquire About the Blueprint</a>
-      </div>
+  <div style="position:relative;z-index:2;text-align:center;max-width:1000px;margin:0 auto">
+    <div class="ey fi" style="color:rgba(255,255,255,.6)">First Aid for Your Joints</div>
+    <h2 class="fi" style="color:#fff;margin-bottom:18px">Start Here. Feel Better by Closing Time.</h2>
+    <p class="fi" style="color:rgba(255,255,255,.65);margin-bottom:8px">Three free 5-minute videos. Start your first micro-reset today.</p>
+    <p class="sub fi" style="color:rgba(255,255,255,.4);font-style:italic;margin-bottom:36px">Ready to use between your next two dogs.</p>
+
+    <!-- Video steps as a centred row -->
+    <div class="vid-steps fi" id="free-videos" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:40px">
+      <div class="vs" style="text-align:left"><div class="vs-n">1</div><p>Workstation set-up for joint protection</p></div>
+      <div class="vs" style="text-align:left"><div class="vs-n">2</div><p>Quick neck and shoulder reset</p></div>
+      <div class="vs" style="text-align:left"><div class="vs-n">3</div><p>Wrist and grip reset for scissor and clipper work</p></div>
     </div>
-    <!-- RIGHT: video steps -->
-    <div class="fi d2" style="display:flex;flex-direction:column;justify-content:center;gap:16px">
-      <div class="vid-steps" id="free-videos">
-        <div class="vs"><div class="vs-n">1</div><p>Video 1: Workstation set-up for joint protection</p></div>
-        <div class="vs"><div class="vs-n">2</div><p>Video 2: Quick neck and shoulder reset</p></div>
-        <div class="vs"><div class="vs-n">3</div><p>Video 3: Wrist and grip reset for scissor and clipper work</p></div>
-      </div>
+
+    <!-- CTAs -->
+    <div class="fa-btns fi" style="display:flex;flex-direction:column;gap:14px;max-width:520px;margin:0 auto 40px">
+      <a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime btn-arrow" style="justify-content:center">Get the Free Quick Reset</a>
+      <a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn" style="justify-content:center;line-height:1.35;padding:16px 22px;white-space:normal;background:transparent;border:2px solid var(--lime);color:var(--lime)">Protect Your Body — Mini GroomerReset · $75</a>
+    </div>
+
+    <!-- Blueprint enquiry strip -->
+    <div class="fi" style="padding:24px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);max-width:580px;margin:0 auto;text-align:center">
+      <div style="font-family:'Folit',sans-serif;font-size:1.42rem;font-weight:400;color:#fff;margin-bottom:6px">GroomerReset Blueprint</div>
+      <p style="color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:16px">8-week live group programme. <em style="color:rgba(255,255,255,.55)">In development — enquiries welcome.</em></p>
+      <a href="https://link.groomerreset.com/widget/form/UdCeziacQMjKnbKRsQzA" target="_blank" rel="noopener" class="btn btn-lime btn-arrow" style="padding:12px 22px;font-size:.9rem">Enquire About the Blueprint</a>
     </div>
   </div></div>
 </section>
@@ -1138,7 +1112,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
     </div>
     <div class="fi d2" style="display:flex;flex-direction:column;gap:16px">
       <div class="ph" style="height:420px;background:none;border:none;padding:0;overflow:hidden"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/ChatGPT_Image_Apr_1_2026_10_39_25_PM_1_ahlhyz.png" alt="Team training session" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r)"/></div>
-      <div class="assoc-cta"><h3>Get in Touch. Let&#8217;s Talk About Your Team.</h3><p>Reach out to protect your staff, students and members.</p><a href="mailto:hello@groomeresetnoreen.com" class="btn btn-lime btn-arrow">Get in Touch</a></div>
+      <div class="assoc-cta"><h3>Get in Touch. Let&#8217;s Talk About Your Team.</h3><p>Reach out to protect your staff, students and members.</p><a href="https://link.groomerreset.com/widget/form/UdCeziacQMjKnbKRsQzA" target="_blank" rel="noopener" class="btn btn-lime btn-arrow">Get in Touch</a></div>
     </div>
   </div></div>
 </section>
@@ -1147,12 +1121,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
 <footer>
   <div class="w">
     <div class="ft">
-      <div class="fb"><div class="logo" style="font-size:1.15rem"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Group_11_wxutay.png" alt="GroomerReset" style="height:30px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:12px"/></div><p>Ready to protect your body and your career? Start using GroomerReset on your next grooming day.</p><div class="fsoc"><a href="#" class="fsi">f</a><a href="#" class="fsi">ig</a><a href="#" class="fsi">yt</a><a href="#" class="fsi">in</a></div></div>
+      <div class="fb"><div class="logo" style="font-size:1.15rem"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Group_11_wxutay.png" alt="GroomerReset" style="height:30px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:12px"/></div><p>Protect your body and your career. Start on your next grooming day.</p><div class="fsoc"><a href="https://www.facebook.com/groomerreset/" target="_blank" rel="noopener" class="fsi">f</a></div></div>
       <div class="fc"><h4>Programme</h4><ul><li><a href="#crisis">The Crisis Report</a></li><li><a href="#ripple">The Ripple Effect</a></li><li><a href="#system">Reset System</a></li><li><a href="#traffic">Joint Bank</a></li><li><a href="#solution">Mini Programme</a></li></ul></div>
-      <div class="fc"><h4>About</h4><ul><li><a href="#mission">Noreen&#8217;s Mission</a></li><li><a href="#assoc">Team Training</a></li><li><a href="#"></a></li><li><a href="#"></a></li><li><a href="#">[Social Media]</a></li></ul></div>
-      <div class="fc"><h4>Get Started</h4><ul><li><a href="#first-aid">Free Quick Reset</a></li><li><a href="#first-aid">Mini Programme — $67</a></li><li><a href="#assoc">Association Training</a></li><li><a href="#assoc">Salon Team Training</a></li></ul></div>
+      <div class="fc"><h4>About</h4><ul><li><a href="#mission">Noreen&#8217;s Mission</a></li><li><a href="#assoc">Team Training</a></li><li><a href="https://www.groomerreset.com" target="_blank" rel="noopener">WWW.GROOMERRESET.COM</a></li><li><a href="mailto:Noreen@groomerreset.com">Noreen@groomerreset.com</a></li><li><a href="https://www.facebook.com/groomerreset/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div class="fc"><h4>Get Started</h4><ul><li><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener">Free Quick Reset</a></li><li><a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener">Mini Programme — $75</a></li><li><a href="#assoc">Association Training</a></li><li><a href="#assoc">Salon Team Training</a></li></ul></div>
     </div>
-    <div class="ft-bot"><p>&#169; 2026 GroomerReset. All rights reserved. &nbsp;&nbsp; &nbsp;&nbsp;</p><p class="ft-disc">GroomerReset is education and coaching only. It does not provide individual diagnosis or treatment.</p></div>
+    <div class="ft-bot"><p>&#169; 2026 GroomerReset. All rights reserved. &nbsp;|&nbsp; <a href="https://www.groomerreset.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">WWW.GROOMERRESET.COM</a> &nbsp;|&nbsp; <a href="mailto:Noreen@groomerreset.com" style="color:inherit;text-decoration:underline">Noreen@groomerreset.com</a></p><p class="ft-disc">GroomerReset is education and coaching only. It does not provide individual diagnosis or treatment.</p></div>
   </div>
 </footer>
 
