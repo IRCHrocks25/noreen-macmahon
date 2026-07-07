@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-NZ">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms & Conditions | GroomerReset</title>
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #1f2a37;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: #ffffff;
-    }
-    h1, h2 {
-      color: #123b5d;
-    }
-    h1 {
-      margin-bottom: 0.2em;
-    }
-    .meta {
-      color: #555;
-      margin-bottom: 2em;
-    }
-    .notice {
-      background: #f4f8fb;
-      border-left: 4px solid #123b5d;
-      padding: 16px;
-      margin: 24px 0;
-    }
-    a {
-      color: #123b5d;
-    }
-    ul {
-      margin-top: 0.5em;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms & Conditions | GroomerReset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#353564;--text:#6b6b8a;--btn:#7979FF;--white:#fff;--lav:#f5f4f0;--lav-deep:#e2e0da;--lime:#c8f06a;--r:24px}
+*{box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;margin:0;background:var(--white);color:var(--text);line-height:1.75}
+h1,h2,h3{font-family:'Outfit',sans-serif;color:var(--navy);line-height:1.15;letter-spacing:-.02em}
+a{color:var(--btn)}
+.w{width:100%;max-width:1240px;margin:0 auto;padding:0 40px;box-sizing:border-box}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,.96);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;width:90%;max-width:1160px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.nk{display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0}
+.nk a{font-size:.9rem;font-weight:600;color:var(--navy);opacity:.6;transition:opacity .2s;white-space:nowrap;text-decoration:none}
+.nk a:hover{opacity:1}
+.nc{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+.ham span{display:block;width:24px;height:2.5px;background:var(--navy);border-radius:2px}
+.mob{display:none;position:fixed;inset:0;background:var(--lav);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.mob.open{display:flex}
+.mob a{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);text-decoration:none}
+.mob-x{position:absolute;top:22px;right:22px;font-size:1.6rem;cursor:pointer;color:var(--navy);background:none;border:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 34px;border-radius:100px;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;border:none;cursor:pointer;text-align:center;white-space:nowrap;text-decoration:none}
+.btn-lime{background:var(--lime);color:var(--navy)}
+.btn-white{background:#fff;color:var(--navy);border:2px solid var(--lav-deep)}
+@media(max-width:900px){.nk,.nc{display:none}.ham{display:flex}}
+
+/* HERO */
+.legal-hero{background:var(--navy);padding:160px 0 64px;text-align:center}
+.legal-hero h1{color:#fff;margin:0;font-size:2.6rem}
+@media(max-width:768px){.legal-hero{padding:120px 0 48px}.legal-hero h1{font-size:1.9rem}}
+
+/* CONTENT */
+.legal-content{max-width:860px;margin:0 auto;padding:56px 20px 40px}
+.legal-content .meta{color:var(--text);margin-bottom:2em}
+.legal-content .notice{background:var(--lav);border-left:4px solid var(--btn);padding:16px;margin:24px 0;border-radius:8px}
+.legal-content ul,.legal-content ol{margin-top:.5em}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:32px}
+.fb .logo{color:#fff;margin-bottom:12px;font-size:1.15rem}
+.fb p{font-size:1rem;max-width:260px}
+.fsoc{display:flex;gap:8px;margin-top:16px}
+.fsi{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:rgba(255,255,255,.4);transition:all .2s;text-decoration:none}
+.fsi:hover{background:var(--lime);color:var(--navy)}
+.fc h4{font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+.fc ul a{font-size:1rem;color:rgba(255,255,255,.4);transition:color .2s;text-decoration:none}
+.fc ul a:hover{color:#fff}
+.ft-bot{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+.ft-bot p{font-size:1rem;margin:0}
+.ft-disc{font-size:1rem;font-style:italic;color:rgba(255,255,255,.28);margin:0}
+@media(max-width:768px){.ft{grid-template-columns:1fr;gap:28px}}
+</style>
 </head>
 <body>
 
-  <h1>Terms & Conditions</h1>
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Group_11_wxutay.png" alt="GroomerReset" style="height:43px;width:auto;display:block"/></a>
+    <ul class="nk"><li><a href="index.html#crisis">The Crisis</a></li><li><a href="index.html#system">The System</a></li><li><a href="index.html#mission">About Noreen</a></li><li><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener">Free Reset</a></li><li><a href="index.html#assoc">Training</a></li></ul>
+    <div class="nc"><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-white" style="padding:10px 20px;font-size:.9rem">Free Quick Reset</a><a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-lime" style="padding:10px 20px;font-size:.9rem">Start Grooming Smarter</a></div>
+    <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mob" id="mob"><button class="mob-x" onclick="toggleMenu()">&#x2715;</button><a href="index.html#crisis" onclick="toggleMenu()">The Crisis</a><a href="index.html#system" onclick="toggleMenu()">The System</a><a href="index.html#mission" onclick="toggleMenu()">About Noreen</a><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" onclick="toggleMenu()">Free Reset</a><a href="index.html#assoc" onclick="toggleMenu()">Training</a><a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-lime" onclick="toggleMenu()">Start Grooming Smarter</a></div>
+
+<!-- HERO -->
+<div class="legal-hero"><h1>Terms &amp; Conditions</h1></div>
+
+<!-- CONTENT -->
+<div class="legal-content">
+
   <p class="meta">
     Effective date: April 6, 2026<br>
     Website owner: Fantail Products Ltd<br>
@@ -215,5 +255,23 @@
     Email: <a href="mailto:Noreen@groomerreset.com">Noreen@groomerreset.com</a>
   </p>
 
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="w">
+    <div class="ft">
+      <div class="fb"><div class="logo" style="font-size:1.15rem"><img src="https://cdn.katalyst-crm.com/t1/cloudinary/Group_11_wxutay.png" alt="GroomerReset" style="height:30px;width:auto;display:block;filter:brightness(0) invert(1);margin-bottom:12px"/></div><p>Protect your body and your career. Start on your next grooming day.</p><div class="fsoc"><a href="https://www.facebook.com/groomerreset/" target="_blank" rel="noopener" class="fsi">f</a></div></div>
+      <div class="fc"><h4>Programme</h4><ul><li><a href="index.html#crisis">The Crisis Report</a></li><li><a href="index.html#ripple">The Ripple Effect</a></li><li><a href="index.html#system">Reset System</a></li><li><a href="index.html#traffic">Joint Bank</a></li><li><a href="index.html#solution">Mini Programme</a></li></ul></div>
+      <div class="fc"><h4>About</h4><ul><li><a href="index.html#mission">Noreen&#8217;s Mission</a></li><li><a href="index.html#assoc">Team Training</a></li><li><a href="https://www.groomerreset.com" target="_blank" rel="noopener">WWW.GROOMERRESET.COM</a></li><li><a href="mailto:Noreen@groomerreset.com">Noreen@groomerreset.com</a></li><li><a href="https://www.facebook.com/groomerreset/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div class="fc"><h4>Get Started</h4><ul><li><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener">Free Quick Reset</a></li><li><a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener">Mini Programme — $67</a></li><li><a href="index.html#assoc">Association Training</a></li><li><a href="index.html#assoc">Salon Team Training</a></li></ul></div>
+    </div>
+    <div class="ft-bot"><p>&#169; 2026 GroomerReset. All rights reserved. &nbsp;|&nbsp; <a href="https://www.groomerreset.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">WWW.GROOMERRESET.COM</a> &nbsp;|&nbsp; <a href="mailto:Noreen@groomerreset.com" style="color:inherit;text-decoration:underline">Noreen@groomerreset.com</a> &nbsp;|&nbsp; <a href="terms.html" style="color:inherit;text-decoration:underline">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a></p><p class="ft-disc">GroomerReset is education and coaching only. It does not provide individual diagnosis or treatment.</p></div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){const m=document.getElementById('mob');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':''}
+</script>
 </body>
 </html>
