@@ -179,6 +179,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
 /* ── Traffic Light Bento Cards ── */
 .tl3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
 .tl-wide{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:44px}
+
+/* ════════════════════════════════════
+   TESTIMONIALS — 3-card grid
+   ════════════════════════════════════ */
+#testimonials{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.testi-grid .mt{margin-bottom:0;display:flex;flex-direction:column}
 .tlc{border-radius:22px;overflow:hidden;position:relative;cursor:default;transition:transform .22s ease}
 .tlc:hover{transform:translateY(-4px)}
 .tlc.g{background:#edfaf4}.tlc.a{background:#fff8ec}.tlc.r{background:#fef2f2}
@@ -407,7 +414,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   .bento{grid-template-columns:1fr 1fr}
   .bc-span2{grid-column:auto}
   .hero-r{display:none}
-  .rip-cards,.tl3,.hero-cards{grid-template-columns:1fr 1fr}
+  .rip-cards,.tl3,.hero-cards,.testi-grid{grid-template-columns:1fr 1fr}
   .tl-wide{grid-template-columns:1fr}
   .ft{grid-template-columns:1fr 1fr}
   .price-cta-box{grid-template-columns:1fr !important}
@@ -447,7 +454,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   h3{font-size:1.2rem}
   
   /* Grids */
-  .rip-cards,.tl3,.tl-wide,.comp-row,.hero-cards,.bento,.ft{grid-template-columns:1fr !important}
+  .rip-cards,.tl3,.tl-wide,.comp-row,.hero-cards,.bento,.ft,.testi-grid{grid-template-columns:1fr !important}
   .ft{gap:28px}
   
   /* Hero */
@@ -617,11 +624,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   <div class="w">
     <div class="hero-g" style="grid-template-columns:1fr">
       <div class="hero-l fi" style="max-width:920px;padding-right:0">
-        <h1>Your Body Shouldn't Pay The Price For Dog <em>Grooming.</em></h1>
+        <h1>Your Body Shouldn't Pay The Price For Dog <em>Grooming</em></h1>
         <p class="hero-subtitle" style="font-size:1.2rem;color:var(--navy);opacity:.9;font-weight:600;margin-bottom:40px;line-height:1.5;margin-top:24px">Practical body maintenance training designed for the real demands of grooming work.</p>
         <div class="hero-btns">
-          <a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
           <a href="#system" class="btn btn-white">See How It Works</a>
+          <a href="https://link.groomerreset.com/widget/form/FICgjqqsN8Uj3HXCs91u" target="_blank" rel="noopener" class="btn btn-lime btn-arrow">Start Grooming Smarter</a>
         </div>
       </div>
     </div>
@@ -885,6 +892,37 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   </div>
 </section>
 
+<!-- ═══════════ TESTIMONIALS ═══════════ -->
+<section id="testimonials">
+  <div class="w">
+    <div class="tl-head fi"><div class="ey">What Groomers Are Saying</div><h2>Real Results From Real Groomers.</h2></div>
+    <div class="testi-grid fi">
+
+      <div class="mt">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&#8220;Noreen has recently become involved in the New Zealand dog grooming industry, bringing her extensive experience as a physiotherapist to help groomers specifically. She has created a refreshing program aimed at supporting us in taking care of our bodies. Noreen is a positive and trustworthy person, and I believe her program will greatly benefit many groomers across New Zealand.&#8221;</blockquote>
+        <div class="mt-n">Leanne Kingsbury</div>
+        <div class="mt-r" style="font-size:.85rem;color:rgba(255,255,255,.45)">Kingsbury &amp; Co &middot; <a href="https://kingsburyandco.co.nz/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:underline">kingsburyandco.co.nz</a></div>
+      </div>
+
+      <div class="mt">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&#8220;Noreen has been an incredible support through the GroomerReset program. She is genuinely keen to help, tenacious in finding solutions, and someone you can trust completely. Her practical approach makes learning easy, and she has a talent for turning complex concepts into simple, actionable steps.<br><br>Through GroomerReset, Noreen provides valuable tools to help groomers reduce physical strain, work more comfortably, and build healthier, longer-lasting careers. Her expertise and commitment make a real difference, and I would highly recommend her program to any groomer looking to improve their wellbeing and longevity in the industry.&#8221;</blockquote>
+        <div class="mt-n">Helen McCauley</div>
+        <div class="mt-r" style="font-size:.85rem;color:rgba(255,255,255,.45)">Owner, Love That Dog Grooming</div>
+      </div>
+
+      <div class="mt">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>&#8220;I can't recommend Noreen enough! The exercises she teaches to help your body are simple and easy to follow. They have made such a big difference, and I can feel a significant improvement in my body. My staff and I now all take the time to do her exercises between our busy schedule to reset our bodies and I love knowing I am taking proactive steps to protect mine, and my staff's wellbeing.&#8221;</blockquote>
+        <div class="mt-n">Kim Maiden</div>
+        <div class="mt-r" style="font-size:.85rem;color:rgba(255,255,255,.45)">Owner, Lord Billingtons, Lower Hutt, NZ &middot; <a href="https://lordbillingtons.nz/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:underline">lordbillingtons.nz</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ SOLUTION ═══════════ -->
 <section id="solution">
   <!-- waves solution -->
@@ -949,18 +987,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <!-- Full-width testimonial -->
-  <div class="w" style="margin-top:32px">
-    <div class="mt fi" style="max-width:none;padding:36px 44px;text-align:left">
-      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <blockquote style="font-size:1.15rem;line-height:1.7;max-width:920px;margin:0 auto 24px;text-align:center">&#8220;Noreen has recently become involved in the New Zealand dog grooming industry, bringing her extensive experience as a physiotherapist to help groomers specifically. She has created a refreshing program aimed at supporting us in taking care of our bodies. Noreen is a positive and trustworthy person, and I believe her program will greatly benefit many groomers across New Zealand.&#8221;</blockquote>
-      <div style="text-align:center">
-        <div class="mt-n">Leanne Kingsbury</div>
-        <div class="mt-r" style="font-size:.85rem;color:rgba(255,255,255,.45)">Kingsbury &amp; Co &middot; <a href="https://kingsburyandco.co.nz/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.55);text-decoration:underline">kingsburyandco.co.nz</a></div>
-      </div>
     </div>
   </div>
 
