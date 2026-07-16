@@ -539,11 +539,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   /* Footer */
   .fb p{max-width:100%}
   
-  /* Logo nav size */
-  nav img[alt="GroomerReset"]{height:48px !important;max-width:none !important;width:auto !important}
+  /* Logo nav size — logo column 70%, hamburger column 30% */
   .nav-in{padding:0;gap:8px;width:94%}
-  nav .logo{flex-shrink:0;overflow:visible;min-width:auto}
-  .ham{flex-shrink:0}
+  nav .logo{flex:0 0 70%;max-width:70%;overflow:visible;min-width:auto}
+  nav .logo a{display:block;width:100%}
+  nav img[alt="GroomerReset"]{display:block;height:auto !important;max-height:64px !important;width:100% !important;max-width:260px !important}
+  .ham{flex:0 0 30%;align-items:flex-end;justify-content:center}
 }
 
 /* Small mobile */
@@ -559,7 +560,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   h3{font-size:1.1rem}
   
   .nav-in{height:60px}
-  nav img[alt="GroomerReset"]{height:48px !important;max-width:none !important;width:auto !important}
+  nav img[alt="GroomerReset"]{max-height:52px !important;max-width:220px !important}
   
   /* Tighter padding everywhere */
   .bento-card{padding:20px !important}
