@@ -539,12 +539,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   /* Footer */
   .fb p{max-width:100%}
   
-  /* Logo nav size — logo column 80%, hamburger column 20% */
-  .nav-in{padding:0;gap:8px;width:94%}
-  nav .logo{flex:0 0 80%;max-width:80%;overflow:visible;min-width:auto}
+  /* Logo nav size — logo column 85%, nav column 15%, 20px gap between */
+  .nav-in{padding:0;gap:20px;width:94%}
+  nav .logo{flex:0 0 calc(85% - 10px);max-width:calc(85% - 10px);overflow:visible;min-width:auto}
   nav .logo a{display:block;width:100%}
-  nav img[alt="GroomerReset"]{display:block;height:auto !important;max-height:64px !important;width:100% !important;max-width:260px !important}
-  .ham{flex:0 0 20%;align-items:flex-end;justify-content:center}
+  nav img[alt="GroomerReset"]{display:block;height:auto !important;max-height:64px !important;width:100% !important;max-width:280px !important}
+  .ham{flex:0 0 calc(15% - 10px);align-items:flex-end;justify-content:center}
 }
 
 /* Small mobile */
