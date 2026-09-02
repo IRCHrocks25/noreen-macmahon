@@ -104,6 +104,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,244,240,
 .hero-l>p{margin-bottom:12px;max-width:620px;color:var(--navy);opacity:.6}
 .hero-l .sub{font-style:italic;color:var(--navy);opacity:.4;margin-bottom:36px;max-width:580px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.nav-starter-kit{display:none}
 .hero-r{position:relative;display:flex;align-items:center;justify-content:center}
 .hero-img{width:100%;height:500px;border-radius:var(--r-lg);background:rgba(255,255,255,.4);border-color:rgba(255,255,255,.5)}
 /* floating squiggle shapes around hero */
@@ -430,7 +431,19 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
 /* Mobile nav threshold */
 @media(max-width:900px){
   .nk,.nc{display:none}
-  .ham{display:flex}
+  .ham{display:flex;flex-shrink:0}
+  .nav-in{gap:12px}
+  nav .logo{flex:0 1 auto;min-width:0}
+  nav .nav-starter-kit{
+    display:inline-flex;
+    flex:1 1 auto;
+    max-width:200px;
+    padding:8px 12px;
+    font-size:.75rem;
+    line-height:1.2;
+    white-space:normal;
+    text-align:center;
+  }
 }
 
 /* Mobile portrait */
@@ -543,12 +556,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   /* Footer */
   .fb p{max-width:100%}
   
-  /* Logo nav size — logo column 85%, nav column 15%, 20px gap between */
-  .nav-in{padding:0;gap:20px;width:94%;height:84px}
-  nav .logo{flex:0 0 calc(85% - 10px);max-width:calc(85% - 10px);overflow:visible;min-width:auto}
+  /* Logo + starter kit + hamburger in one row */
+  .nav-in{padding:0;gap:10px;width:94%;height:84px}
+  nav .logo{flex:0 1 auto;max-width:46%;overflow:visible;min-width:0}
   nav .logo a{display:block;width:100%}
-  nav img[alt="GroomerReset"]{display:block;height:auto !important;max-height:72px !important;width:100% !important;max-width:340px !important}
-  .ham{flex:0 0 calc(15% - 10px);align-items:flex-end;justify-content:center}
+  nav img[alt="GroomerReset"]{display:block;height:auto !important;max-height:56px !important;width:auto !important;max-width:100% !important}
+  nav .nav-starter-kit{max-width:none}
+  .ham{flex:0 0 auto;align-items:center;justify-content:center}
 }
 
 /* Small mobile */
@@ -563,8 +577,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
   h2{font-size:1.4rem !important}
   h3{font-size:1.1rem}
   
-  .nav-in{height:78px}
-  nav img[alt="GroomerReset"]{max-height:64px !important;max-width:300px !important}
+  .nav-in{height:78px;gap:8px}
+  nav img[alt="GroomerReset"]{max-height:48px !important}
+  nav .nav-starter-kit{padding:6px 8px;font-size:.68rem}
   
   /* Tighter padding everywhere */
   .bento-card{padding:20px !important}
@@ -619,6 +634,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:76px 0 36px}
     <div class="logo"><a href="/" style="display:block"><img src="https://cdn.katalyst-crm.com/t1/groomerss.png" alt="GroomerReset" style="height:58px;width:auto;display:block"/></a></div>
     <ul class="nk"><li><a href="#crisis">The Crisis</a></li><li><a href="#system">The System</a></li><li><a href="#mission">About Noreen</a></li><li><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener">Free Reset</a></li><li><a href="#assoc">Training</a></li></ul>
     <div class="nc"><a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-white" style="padding:10px 20px;font-size:.9rem">Free Quick Reset</a><a href="https://emjgcufhbwmw1irla2xt.app.clientclub.net/courses/offers/35202265-8c74-4960-a65a-2e59794ba9de" target="_blank" rel="noopener" class="btn btn-lime btn-arrow" style="padding:10px 20px;font-size:.9rem">Start Grooming Smarter</a></div>
+    <a href="https://link.groomerreset.com/widget/form/V06WDaPX7yxg6oZRAFAs" target="_blank" rel="noopener" class="btn btn-lime nav-starter-kit">Access the Free Starter Kit</a>
     <div class="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </nav>
